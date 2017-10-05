@@ -6,7 +6,7 @@ r<!DOCTYPE html>
   <meta charset="utf-8">
 
   <!-- Load Leaflet code library - see updates at http://leafletjs.com/download.html -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>
+ 
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <!-- Load Omnivore plugin to convert CSV to GeoJSON format -->
   <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
@@ -34,11 +34,7 @@ r<!DOCTYPE html>
     scrollWheelZoom: false
   });
 
-  /* Control panel to display map layers */
-  var controlLayers = L.control.layers( null, null, null, {
-  position: "topright",
-  collapsed: false
-  }).addTo(map);
+  
 
   /* Carto light-gray basemap tiles with labels */
   var light = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
@@ -47,7 +43,7 @@ r<!DOCTYPE html>
   controlLayers.addBaseLayer(light, 'Carto Light basemap');
 
   /* Stamen colored terrain basemap tiles with labels */
-  var terrain = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.png', {
+  var toner = L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-labels/{z}/{x}/{y}.png', {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
   }).addTo(map); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
   controlLayers.addBaseLayer(labels, 'Stamen Toner Labels');
