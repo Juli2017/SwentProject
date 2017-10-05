@@ -35,7 +35,7 @@
   });
 
   /* Control panel to display map layers */
-  var controlLayers = L.control.layers( null, null, null, {
+  var controlLayers = L.control.layers( null, null, {
   position: "topright",
   collapsed: false
   }).addTo(map);
@@ -52,11 +52,7 @@
   }); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
   controlLayers.addBaseLayer(terrain, 'Stamen Terrain basemap');
     
-  /* ESRI Street Map */
-  var Esri_WorldStreetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}.png', {
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
-  }); // EDIT - insert or remove ".addTo(map)" before last semicolon to display by default
-  controlLayers.addBaseLayer(esri, 'ESRI World Street Map');
+ 
 
   /* Display a blue point marker with pop-up text */
   //L.marker([41.77, -72.69]).addTo(map) // EDIT latitude, longitude to re-position marker
